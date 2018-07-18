@@ -12,66 +12,6 @@ export default {
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Roboto', Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #222222;
-}
-
-nav {
-  background-color: #828282;
-  opacity: .8;
-  z-index: 10;
-  width: 100%;
-  h3 {
-    font-weight: bold;
-    font-size: 24px;
-    color: white;
-    margin: 0;
-    padding: 10px 0;
-  }
-  .nav-content {
-    width: 82%;
-    max-width: 980px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      height: 21px;
-    }
-  }
-  .main-nav {
-    opacity: 0;
-    display: none;
-  }
-  .main-nav-show {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    a {
-      color: white;
-      font-size: 46px;
-      text-decoration: none;
-      padding: 20px;
-    }
-    .active {
-      color: black;
-    }
-  }
-  .ham-button-close {
-    display: none;
-  }
-}
-
-.container {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1024px;
-}
+@import 'less/index.less';
 
 </style>

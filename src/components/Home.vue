@@ -131,9 +131,11 @@
   </div>
 </template>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -142,20 +144,38 @@ export default {
 }
 </script>
 
+<script>
+const hamButton = document.querySelector('.ham-button')
+const hamButtonClose = document.querySelector('.ham-button-close')
+const mainNav = document.querySelector('.main-nav')
+
+const openNav = function () {
+  mainNav.classList.add('main-nav-show')
+  hamButton.style.display = 'none'
+  hamButtonClose.style.display = 'block'
+}
+
+const closeNav = function () {
+  mainNav.classList.remove('main-nav-show')
+  hamButton.style.display = 'block'
+  hamButtonClose.style.display = 'none'
+}
+
+hamButton.addEventListener('click', () => {
+  TweenLite.to(mainNav, 0.5, {
+    opacity: 1,
+    ease: Power1.easeInOut,
+    onComplete: openNav()
+  })
+})
+
+hamButtonClose.addEventListener('click', () => {
+  TweenLite.to(mainNav, 0.5, {
+    opacity: 0,
+    ease: Power1.easeInOut,
+    onComplete: closeNav
+  })
+})
+</script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
