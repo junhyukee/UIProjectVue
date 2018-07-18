@@ -3,8 +3,8 @@
     <nav class="sticky">
       <div class="nav-content">
         <h3>S&J</h3>
-        <img src="../img/nav-hamburger.png" class="ham-button" v-on:click="openNav">
-        <img src="../img/nav-hamburger-close.png" class="ham-button-close" v-on:click="closeNav">
+        <img src="../img/nav-hamburger.png" class="ham-button" @click="openNav">
+        <img src="../img/nav-hamburger-close.png" class="ham-button-close" @click="closeNav">
       </div>
       <div class="main-nav">
         <a href="index.html" class="active">Home</a>
@@ -143,11 +143,17 @@ export default {
   },
   methods: {
     openNav: function () {
+      const hamButton = document.querySelector('.ham-button');
+      const hamButtonClose = document.querySelector('.ham-button-close');
+      const mainNav = document.querySelector('.main-nav');
       mainNav.classList.add('main-nav-show')
       hamButton.style.display = 'none'
       hamButtonClose.style.display = 'block'
     },
     closeNav: function () {
+      const hamButton = document.querySelector('.ham-button');
+      const hamButtonClose = document.querySelector('.ham-button-close');
+      const mainNav = document.querySelector('.main-nav');
       mainNav.classList.remove('main-nav-show')
       hamButton.style.display = 'block'
       hamButtonClose.style.display = 'none'
