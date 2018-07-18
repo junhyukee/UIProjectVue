@@ -3,8 +3,8 @@
     <nav class="sticky">
       <div class="nav-content">
         <h3>S&J</h3>
-        <img src="../img/nav-hamburger.png" class="ham-button" @click="myFilter()">
-        <img src="../img/nav-hamburger-close.png" class="ham-button-close" @click="myFilter()">
+        <img src="../static/nav-hamburger.png" class="ham-button" @click="myFilter()">
+        <img src="../static/nav-hamburger-close.png" class="ham-button-close" @click="myFilter()">
       </div>
       <div class="main-nav" v-bind:class="{'main-nav-show': isActive}">
         <a v-for="page in pages"
@@ -14,8 +14,8 @@
 
     <div class="home container">
       <div class="jumbotron">
-        <img src="../img/home/home-jumbotron.png" alt="picture of one of our works" class="d-image">
-        <img src="../img/home/home-mobile-jumbotron.png" alt="picture of one of our works" class="m-image">
+        <img src="../static/home/home-jumbotron.png" alt="picture of one of our works" class="d-image">
+        <img src="../static/home/home-mobile-jumbotron.png" alt="picture of one of our works" class="m-image">
         <div class="jumbotron-text">
           <h1>
             Integrity,<br>
@@ -26,7 +26,7 @@
       </div>
       <div class="main-content">
         <div class="content-box m-image">
-          <img src="../img/home/home-mobile-img-1.png" alt="image of pen and paper" class="m-image">
+          <img src="../static/home/home-mobile-img-1.png" alt="image of pen and paper" class="m-image">
         </div>
         <div class="content-box content-box-text content-box-first">
           <h3>Smith & Jones Architects</h3>
@@ -34,11 +34,11 @@
           <button>Learn More</button>
         </div>
         <div class="content-box" >
-          <img src="../img/home/home-img-1.png" alt="image of pen and paper" class="d-image">
+          <img src="../static/home/home-img-1.png" alt="image of pen and paper" class="d-image">
         </div>
         <div class="content-box">
-          <img src="../img/home/home-img-2.png" alt="image of futuristic design" class="d-image">
-          <img src="../img/home/home-mobile-img-2.png" alt="image of futuristic design" class="m-image">
+          <img src="../static/home/home-img-2.png" alt="image of futuristic design" class="d-image">
+          <img src="../static/home/home-mobile-img-2.png" alt="image of futuristic design" class="m-image">
         </div>
         <div class="content-box content-box-text content-box-last">
           <h3>Futuristic Designs</h3>
@@ -47,45 +47,10 @@
         </div>
         <div class="recent-projects">
           <h3>Recent Projects</h3>
-          <div class="project">
-            <div class="main-image">
-              <img src="../img/home/home-villas-img.png" alt="pictures of villas" class="d-image">
-              <img src="../img/home/home-mobile-villas-img.png" alt="pictures of villas" class="m-image">
-              <div class="title">
-                <h3>THE VILLAS</h3>
-              </div>
-            </div>
-            <div class="project-content">
-              <p>The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-          </div>
-          <div class="project">
-            <div class="main-image">
-              <img src="../img/home/home-outskirts-img.png" alt="pictures of outskirts" class="d-image">
-              <img src="../img/home/home-mobile-outskirts-img.png" alt="pictures of outskirts" class="m-image">
-              <div class="title left-title">
-                <h3>OUTSKIRTS</h3>
-              </div>
-            </div>
-            <div class="project-content">
-              <p>The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-          </div>
-          <div class="project">
-            <div class="main-image">
-              <img src="../img/home/home-the-blocks-img.png" alt="pictures of blocks" class="d-image">
-              <img src="../img/home/home-mobile-the-blocks-img.png" alt="pictures of blocks" class="m-image">
-              <div class="title">
-                <h3>THE BLOCKS</h3>
-              </div>
-            </div>
-            <div class="project-content">
-              <p>The Blocks are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
-              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            </div>
-          </div>
+          <display-project
+          v-for='project in projects'
+          v-bind:key='project.id'
+          v-bind:project='project'></display-project>
         </div>
       </div>
     </div>
@@ -135,23 +100,18 @@ export default {
   data () {
     return {
       isActive: false,
-      pages: ['Home', 'Services', 'Contact', 'Projects']
+      pages: ['Home', 'Services', 'Contact', 'Projects'],
+      projects: [
+        {id: 1, title: 'THE VILLAS', content: 'The Villas blah blah blah', desktopImage: require('../static/home/home-villas-img.png'), alt: 'Picture of villas', mobileImage: require('../static/home/home-mobile-villas-img.png')},
+        {id: 2, title: 'OUTSKIRTS', content: 'The Outskirts blah blah blah', desktopImage: require('../static/home/home-outskirts-img.png'), alt: 'Picture of outskirts', mobileImage: require('../static/home/home-mobile-outskirts-img.png')},
+        {id: 3, title: 'THE BLOCKS', content: 'The Blocks blah blah blah', desktopImage: require('../static/home/home-the-blocks-img.png'), alt: 'Picture of blocks', mobileImage: require('../static/home/home-mobile-the-blocks-img.png')}
+      ]
     }
   },
   methods: {
     myFilter: function () {
       this.isActive = !this.isActive
-    },
-    visibleToggle: function (e) {
-      console.log(this.$el.childNodes)
-      // if (this.style.display !== 'none') {
-      //   this.style.display = 'none'
-      // } else {
-      //   this.style.display = 'block'
-      // }
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->

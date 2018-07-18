@@ -6,6 +6,23 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+Vue.component('display-project', {
+  props: ['project'],
+  template: `<div class="project">
+            <div class="main-image">
+              <img v-bind:src="project.desktopImage" v-bind:alt="project.alt" class="d-image">
+              <img v-bind:src="project.mobileImage" v-bind:alt="project.alt" class="m-image">
+              <div class="title">
+                <h3>{{ project.title }}</h3>
+              </div>
+            </div>
+            <div class="project-content">
+              <p> {{ project.content }} </p>
+              <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+            </div>
+          </div>`
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
