@@ -30,19 +30,19 @@
         <div class="content-box m-image">
           <img src="../img/home/home-mobile-img-1.png" alt="image of pen and paper" class="m-image">
         </div>
-        <div class="content-box content-box-text content-box-first os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
+        <div class="content-box content-box-text content-box-first">
           <h3>Smith & Jones Architects</h3>
           <p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem </p>
           <button>Learn More</button>
         </div>
-        <div class="content-box os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+        <div class="content-box" >
           <img src="../img/home/home-img-1.png" alt="image of pen and paper" class="d-image">
         </div>
-        <div class="content-box os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
+        <div class="content-box">
           <img src="../img/home/home-img-2.png" alt="image of futuristic design" class="d-image">
           <img src="../img/home/home-mobile-img-2.png" alt="image of futuristic design" class="m-image">
         </div>
-        <div class="content-box content-box-text content-box-last os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+        <div class="content-box content-box-text content-box-last">
           <h3>Futuristic Designs</h3>
           <p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem</p>
           <button>View Designs</button>
@@ -50,40 +50,40 @@
         <div class="recent-projects">
           <h3>Recent Projects</h3>
           <div class="project">
-            <div class="main-image os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+            <div class="main-image">
               <img src="../img/home/home-villas-img.png" alt="pictures of villas" class="d-image">
               <img src="../img/home/home-mobile-villas-img.png" alt="pictures of villas" class="m-image">
               <div class="title">
                 <h3>THE VILLAS</h3>
               </div>
             </div>
-            <div class="project-content os-animation" data-os-animation="pulse" data-os-animation-delay="0s">
+            <div class="project-content">
               <p>The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
               <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
             </div>
           </div>
           <div class="project">
-            <div class="main-image os-animation" data-os-animation="fadeInLeft" data-os-animation-delay="0s">
+            <div class="main-image">
               <img src="../img/home/home-outskirts-img.png" alt="pictures of outskirts" class="d-image">
               <img src="../img/home/home-mobile-outskirts-img.png" alt="pictures of outskirts" class="m-image">
               <div class="title left-title">
                 <h3>OUTSKIRTS</h3>
               </div>
             </div>
-            <div class="project-content os-animation" data-os-animation="pulse" data-os-animation-delay="0s">
+            <div class="project-content">
               <p>The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
               <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
             </div>
           </div>
           <div class="project">
-            <div class="main-image os-animation" data-os-animation="fadeInRight" data-os-animation-delay="0s">
+            <div class="main-image">
               <img src="../img/home/home-the-blocks-img.png" alt="pictures of blocks" class="d-image">
               <img src="../img/home/home-mobile-the-blocks-img.png" alt="pictures of blocks" class="m-image">
               <div class="title">
                 <h3>THE BLOCKS</h3>
               </div>
             </div>
-            <div class="project-content os-animation" data-os-animation="pulse" data-os-animation-delay="0s">
+            <div class="project-content">
               <p>The Blocks are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. </p>
               <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
             </div>
@@ -131,8 +131,6 @@
   </div>
 </template>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-
 <script>
 export default {
   name: 'Home',
@@ -143,17 +141,17 @@ export default {
   },
   methods: {
     openNav: function () {
-      const hamButton = document.querySelector('.ham-button');
-      const hamButtonClose = document.querySelector('.ham-button-close');
-      const mainNav = document.querySelector('.main-nav');
+      const hamButton = document.querySelector('.ham-button')
+      const hamButtonClose = document.querySelector('.ham-button-close')
+      const mainNav = document.querySelector('.main-nav')
       mainNav.classList.add('main-nav-show')
       hamButton.style.display = 'none'
       hamButtonClose.style.display = 'block'
     },
     closeNav: function () {
-      const hamButton = document.querySelector('.ham-button');
-      const hamButtonClose = document.querySelector('.ham-button-close');
-      const mainNav = document.querySelector('.main-nav');
+      const hamButton = document.querySelector('.ham-button')
+      const hamButtonClose = document.querySelector('.ham-button-close')
+      const mainNav = document.querySelector('.main-nav')
       mainNav.classList.remove('main-nav-show')
       hamButton.style.display = 'block'
       hamButtonClose.style.display = 'none'
