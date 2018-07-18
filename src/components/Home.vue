@@ -3,14 +3,12 @@
     <nav class="sticky">
       <div class="nav-content">
         <h3>S&J</h3>
-        <img src="../img/nav-hamburger.png" class="ham-button" @click="openNav">
-        <img src="../img/nav-hamburger-close.png" class="ham-button-close" @click="closeNav">
+        <img src="../img/nav-hamburger.png" class="ham-button" @click="myFilter()">
+        <img src="../img/nav-hamburger-close.png" class="ham-button-close" @click="myFilter()">
       </div>
-      <div class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-        <a href="#">Projects</a>
+      <div class="main-nav" v-bind:class="{'main-nav-show': isActive}">
+        <a v-for="page in pages"
+        :key="page.id"> {{ page }} </a>
       </div>
     </nav>
 
@@ -136,25 +134,21 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      isActive: false,
+      pages: ['Home', 'Services', 'Contact', 'Projects']
     }
   },
   methods: {
-    openNav: function () {
-      const hamButton = document.querySelector('.ham-button')
-      const hamButtonClose = document.querySelector('.ham-button-close')
-      const mainNav = document.querySelector('.main-nav')
-      mainNav.classList.add('main-nav-show')
-      hamButton.style.display = 'none'
-      hamButtonClose.style.display = 'block'
+    myFilter: function () {
+      this.isActive = !this.isActive
     },
-    closeNav: function () {
-      const hamButton = document.querySelector('.ham-button')
-      const hamButtonClose = document.querySelector('.ham-button-close')
-      const mainNav = document.querySelector('.main-nav')
-      mainNav.classList.remove('main-nav-show')
-      hamButton.style.display = 'block'
-      hamButtonClose.style.display = 'none'
+    visibleToggle: function (e) {
+      console.log(this.$el.childNodes)
+      // if (this.style.display !== 'none') {
+      //   this.style.display = 'none'
+      // } else {
+      //   this.style.display = 'block'
+      // }
     }
   }
 }
