@@ -3,8 +3,8 @@
     <nav class="sticky">
       <div class="nav-content">
         <h3>S&J</h3>
-        <img src="../img/nav-hamburger.png" class="ham-button">
-        <img src="../img/nav-hamburger-close.png" class="ham-button-close">
+        <img src="../img/nav-hamburger.png" class="ham-button" v-on:click="openNav">
+        <img src="../img/nav-hamburger-close.png" class="ham-button-close" v-on:click="closeNav">
       </div>
       <div class="main-nav">
         <a href="index.html" class="active">Home</a>
@@ -140,42 +140,20 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  methods: {
+    openNav: function () {
+      mainNav.classList.add('main-nav-show')
+      hamButton.style.display = 'none'
+      hamButtonClose.style.display = 'block'
+    },
+    closeNav: function () {
+      mainNav.classList.remove('main-nav-show')
+      hamButton.style.display = 'block'
+      hamButtonClose.style.display = 'none'
+    }
   }
 }
-</script>
-
-<script>
-const hamButton = document.querySelector('.ham-button')
-const hamButtonClose = document.querySelector('.ham-button-close')
-const mainNav = document.querySelector('.main-nav')
-
-const openNav = function () {
-  mainNav.classList.add('main-nav-show')
-  hamButton.style.display = 'none'
-  hamButtonClose.style.display = 'block'
-}
-
-const closeNav = function () {
-  mainNav.classList.remove('main-nav-show')
-  hamButton.style.display = 'block'
-  hamButtonClose.style.display = 'none'
-}
-
-hamButton.addEventListener('click', () => {
-  TweenLite.to(mainNav, 0.5, {
-    opacity: 1,
-    ease: Power1.easeInOut,
-    onComplete: openNav()
-  })
-})
-
-hamButtonClose.addEventListener('click', () => {
-  TweenLite.to(mainNav, 0.5, {
-    opacity: 0,
-    ease: Power1.easeInOut,
-    onComplete: closeNav
-  })
-})
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
