@@ -9,7 +9,7 @@
       <div class="main-nav" v-bind:class="{'main-nav-show': isActive}">
         <a v-for="(page, index) in pages"
         :key="page.id"
-        :href="`/${page.toLowerCase()}.html`"
+        :href="`/${page.toLowerCase()}`"
         :class="{ 'active': index === 0 }"> {{ page }} </a>
       </div>
     </nav>
@@ -85,9 +85,9 @@ export default {
       isActive: false,
       pages: ['Home', 'Services', 'Contact', 'Projects'],
       projects: [
-        {id: 1, title: 'THE VILLAS', content: 'The Villas blah blah blah', desktopImage: require('../static/home/home-villas-img.png'), alt: 'Picture of villas', mobileImage: require('../static/home/home-mobile-villas-img.png')},
-        {id: 2, title: 'OUTSKIRTS', content: 'The Outskirts blah blah blah', desktopImage: require('../static/home/home-outskirts-img.png'), alt: 'Picture of outskirts', mobileImage: require('../static/home/home-mobile-outskirts-img.png')},
-        {id: 3, title: 'THE BLOCKS', content: 'The Blocks blah blah blah', desktopImage: require('../static/home/home-the-blocks-img.png'), alt: 'Picture of blocks', mobileImage: require('../static/home/home-mobile-the-blocks-img.png')}
+        {id: 1, title: 'THE VILLAS', content: 'The Villas bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.', desktopImage: require('../static/home/home-villas-img.png'), alt: 'Picture of villas', mobileImage: require('../static/home/home-mobile-villas-img.png')},
+        {id: 2, title: 'OUTSKIRTS', content: 'The Outskirts are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.', desktopImage: require('../static/home/home-outskirts-img.png'), alt: 'Picture of outskirts', mobileImage: require('../static/home/home-mobile-outskirts-img.png')},
+        {id: 3, title: 'THE BLOCKS', content: 'The Blocks are amazing to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution.', desktopImage: require('../static/home/home-the-blocks-img.png'), alt: 'Picture of blocks', mobileImage: require('../static/home/home-mobile-the-blocks-img.png')}
       ],
       locations: [
         {id: 1, name: 'New York', address: '123 Lane<br> Suite 100<br> Albany, NY 12345<br> 202 555 0144'},
