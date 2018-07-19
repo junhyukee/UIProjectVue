@@ -40,7 +40,9 @@ Vue.component('display-location', {
 /* eslint-disable no-new */
 new Vue({
   created () {
-    AOS.init()
+    AOS.init({
+      duration: 1000
+    })
   },
   el: '#app',
   router,

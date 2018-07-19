@@ -20,7 +20,7 @@
       <div class="jumbotron">
         <img src="../static/home/home-jumbotron.png" alt="picture of one of our works" class="d-image">
         <img src="../static/home/home-mobile-jumbotron.png" alt="picture of one of our works" class="m-image">
-        <div class="jumbotron-text">
+        <div class="jumbotron-text" data-aos="fade">
           <h1>
             Integrity,<br>
             Excellence,<br>
