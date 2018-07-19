@@ -8,12 +8,12 @@ Vue.config.productionTip = false
 
 // Project component for home page
 Vue.component('display-project', {
-  props: ['project'],
+  props: ['project', 'index'],
   template: `<div class="project">
             <div class="main-image">
               <img v-bind:src="project.desktopImage" v-bind:alt="project.alt" class="d-image">
               <img v-bind:src="project.mobileImage" v-bind:alt="project.alt" class="m-image">
-              <div class="title">
+              <div class="title" v-bind:class="{ 'left-title': index%2 === 1 }">
                 <h3>{{ project.title }}</h3>
               </div>
             </div>
@@ -25,7 +25,6 @@ Vue.component('display-project', {
 })
 
 // Location component for footer
-
 Vue.component('display-location', {
   props: ['location'],
   template: `<div class="location">

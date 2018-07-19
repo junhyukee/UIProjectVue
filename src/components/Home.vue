@@ -50,9 +50,10 @@
         <div class="recent-projects">
           <h3>Recent Projects</h3>
           <display-project
-          v-for='project in projects'
+          v-for='(project,index) in projects'
           v-bind:key='project.id'
-          v-bind:project='project'></display-project>
+          v-bind:project='project'
+          v-bind:index='index'></display-project>
         </div>
       </div>
     </div>
