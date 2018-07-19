@@ -6,7 +6,7 @@
         <img src="../static/nav-hamburger.png" class="ham-button" v-bind:class="{'show-icon': !isActive}" @click="myFilter()">
         <img src="../static/nav-hamburger-close.png" class="ham-button-close" v-bind:class="{'show-icon': isActive}" @click="myFilter()">
       </div>
-      <transition name="bounce">
+      <transition name="bounceDown">
         <div class="main-nav" v-if="isActive" v-bind:class="{'main-nav-show': isActive}">
           <a v-for="(page, index) in pages"
           :key="page.id"
