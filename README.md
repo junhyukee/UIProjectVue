@@ -1,6 +1,7 @@
 # my-project
 
-> A Vue.js project
+A Vue project to rebuild index.html from [User Interface Project](https://github.com/junhyukee/User-Interface-Project-Week)
+* Focus wasn't on completely replicating the site, but rather adding content by utilizing components and Javascript features unique to Vue.js.
 
 ## Build Setup
 

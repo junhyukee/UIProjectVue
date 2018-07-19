@@ -6,6 +6,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+// Project component for home page
 Vue.component('display-project', {
   props: ['project'],
   template: `<div class="project">
@@ -22,6 +23,17 @@ Vue.component('display-project', {
             </div>
           </div>`
 })
+
+// Location component for footer
+
+// Vue.component('display-location', {
+//  props: ['location'],
+//  template: `<div class="location">
+//           <h3>{{ location.name }}</h3>
+//           <p v-html='location.address'>
+//           </p>
+//         </div>`
+// })
 
 /* eslint-disable no-new */
 new Vue({
