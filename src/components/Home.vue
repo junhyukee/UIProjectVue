@@ -3,12 +3,14 @@
     <nav class="sticky">
       <div class="nav-content">
         <h3>S&J</h3>
-        <img src="../static/nav-hamburger.png" class="ham-button" @click="myFilter()">
-        <img src="../static/nav-hamburger-close.png" class="ham-button-close" @click="myFilter()">
+        <img src="../static/nav-hamburger.png" class="ham-button" v-bind:class="{'show-icon': !isActive}" @click="myFilter()">
+        <img src="../static/nav-hamburger-close.png" class="ham-button-close" v-bind:class="{'show-icon': isActive}" @click="myFilter()">
       </div>
       <div class="main-nav" v-bind:class="{'main-nav-show': isActive}">
-        <a v-for="page in pages"
-        :key="page.id"> {{ page }} </a>
+        <a v-for="(page, index) in pages"
+        :key="page.id"
+        :href="`/${page.toLowerCase()}.html`"
+        :class="{ 'active': index === 0 }"> {{ page }} </a>
       </div>
     </nav>
 
