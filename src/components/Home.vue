@@ -32,19 +32,19 @@
         <div class="content-box m-image">
           <img src="../static/home/home-mobile-img-1.png" alt="image of pen and paper" class="m-image">
         </div>
-        <div class="content-box content-box-text content-box-first">
+        <div class="content-box content-box-text content-box-first" data-aos="fade-right">
           <h3>Smith & Jones Architects</h3>
           <p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem </p>
           <button>Learn More</button>
         </div>
-        <div class="content-box" >
+        <div class="content-box" data-aos="fade-left">
           <img src="../static/home/home-img-1.png" alt="image of pen and paper" class="d-image">
         </div>
-        <div class="content-box">
+        <div class="content-box" data-aos="fade-right">
           <img src="../static/home/home-img-2.png" alt="image of futuristic design" class="d-image">
           <img src="../static/home/home-mobile-img-2.png" alt="image of futuristic design" class="m-image">
         </div>
-        <div class="content-box content-box-text content-box-last">
+        <div class="content-box content-box-text content-box-last" data-aos="fade-left">
           <h3>Futuristic Designs</h3>
           <p>Et sed autem causae appareat, tempor abhorreant te mei, facer facilisis sit ea. Eu timeam vidisse consectetuer sed. Duo etiam laboramus dissentiet in, nec no errem</p>
           <button>View Designs</button>
@@ -55,7 +55,8 @@
           v-for='(project,index) in projects'
           v-bind:key='project.id'
           v-bind:project='project'
-          v-bind:index='index'></display-project>
+          v-bind:index='index'
+          data-aos="fade-up"></display-project>
         </div>
       </div>
     </div>
